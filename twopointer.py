@@ -1,9 +1,41 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Sun Aug 27 22:27:22 2023
 
-This is a temporary script file.
+@author: sc26s
 """
+def isPalindrome(self, s: str) -> bool:
+    l=0
+    r=len(s)-1
+    while l<r:
+        if s[l].isalnum() and s[r].isalnum():
+            if s[l]==s[r]:
+                l+=1
+                r-=1
+            else:
+                return False
+        elif not s[l].isalnum():
+            l+=1
+        elif not s[r].isalnum():
+            r-=1
+    return True
+    s=s.lower()
+    x=''
+    for i in s:
+        if (i>='a' and i<='z')or (i>='0' and i<='9'):
+            x=x+i
+    return x==x[::-1]
+
+def twoSum(numbers, target):
+    l=0
+    r=len(numbers)-1
+    while l<r:
+        if numbers[l]+numbers[r]==target:
+            return [l+1,r+1]
+        elif numbers[l]+numbers[r]>target:
+            r-=1
+        else:
+            l+=1
 
 def threesum(nums):
     res=[]
